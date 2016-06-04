@@ -5,8 +5,10 @@ This is an exercise to run a simulation of an alien invasion in an imaginary wor
 # Design
 
 ## Data structures and OOD
-I've chosen to represent the world structure in a graph where each city is a node and is linked to other cities/nodes via edges that can be north, south, east and west.
-To implement that graph in Python, I have created a dictionary which contains one element per city with the id being the city name and the value an instance of a City object. 
+I've chosen to represent the world scenario in a graph where each city is a node and is linked to other cities/nodes via edges that can be north, south, east and west.
+
+To implement that graph in Python, I have created a dictionary which contains one element per city with the id being the city name and the value an instance of a city object. 
+
 When a city is destroyed, I considered completely removing it from the data structure, but the cost in performance of updating all the edges in the rest of the cities was too high, so I decided to make cities have a boolean attribute to indicate where they are destroyed or not. This way, when aliens move around, they just need to check first if the city is destroyed or not. 
 
 
