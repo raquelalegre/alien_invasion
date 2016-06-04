@@ -1,3 +1,4 @@
+import random
 from .City import City
 
 class World:
@@ -25,7 +26,7 @@ class World:
             return
 
         for line in f:
-            line_elems = line.split(' ')
+            line_elems = line.replace('\n', '').split(' ')
             # First element is the city name
             city = City(line_elems[0])
             # Rest of elements are the boundaries and can vary in number.
@@ -53,17 +54,16 @@ class World:
         pass
 
 
-    def populate_world_from_file():
-        world = World()
-
-        f = open(path, 'r')
-        for line in f:
-            # E north=Mu south=Aninige east=Dimilu west=Asmismu
-            line_elems = line.split(' ')
-            city = City(line_elems[0])
-            boundaries = line_elems[1:]
-            for boundary in boundaries:
-                coord, destination = boundary.split('=')
-                setattr(city, coord, destination)
-            world.add_city(city)
-        print(world.__dict__)
+    def populate(self, n_aliens):
+        for alien_id in range(n_aliens):
+            random_city_name = random.choice(list(self.cities.keys()))
+            random_city = self.cities[random_city_name]
+            if not random_city.destroyed:
+                # If there is already an alien, destroy city. Otherwise, add it.
+                if random_city.alien:
+                    random_city.destroy(alien_id)
+                else:
+                    random_city.alien = alien_id
+            else:
+                # Search for another city
+                random_city_name = random.choice(list(self.cities.keys()))

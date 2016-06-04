@@ -11,7 +11,17 @@ class City:
     def __init__(self, name):
         self.name = name
         self.destroyed = False
-        self.aliens = []
+        self.alien = None
 
-    def process(self):
-        pass
+    def destroy(self, incoming_alien):
+        '''
+        Alien incoming_alien has arrived to a previously occupied city.
+        Mark city as destroyed and print message.
+        '''
+        self.destroyed = True
+        print("{} has been destroyed by alien {} and alien {}!".format(
+            self.name,
+            self.alien,
+            incoming_alien
+            )
+        )

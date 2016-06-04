@@ -22,9 +22,12 @@ def main():
 
     # TODO: take number of aliens as input
     print("The aliens are coming...")
-    N = 10
+    N = 100
     world.populate(N)
     print("Aliens are ready in their initial destinations")
+
+    for city in world.cities.values():
+        print(city.__dict__)
 
     # TODO: Go over list of cities and move aliens around
     # TODO: Check for destructions and update cities and world
