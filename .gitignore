@@ -1,1 +1,3 @@
-scenario/__pycache__/
+**/__pycache__/
+**/.cache
+**.pyc
