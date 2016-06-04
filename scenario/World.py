@@ -49,9 +49,21 @@ class World:
 
     def step(self):
         '''
+        Make aliens move to next randome city.
         Check conditions for end of world, end of iterations, etc.
         '''
-        pass
+        destinations = ['north', 'east', 'west', 'south']
+        # for city in self.cities.values():
+        #     if city.alien:
+        #         for dest in destinations:
+        #             if hasattr(city, dest):
+        #                 possible_destinations.append(dest)
+        #         random_dest = random.choice(possible_destinations)
+        #         random_city_name = getattr(city, random_dest)
+        #         random_city = self.cities[random_city_name]
+        #         if not random_city.destroyed():
+        #             if random_city.alien:
+        #                 random_city.destroy()
 
 
     def populate(self, n_aliens):
@@ -66,4 +78,8 @@ class World:
                     random_city.alien = alien_id
             else:
                 # Search for another city
+                # TODO should have a list of all non destroyed cities
                 random_city_name = random.choice(list(self.cities.keys()))
+
+    def update(self, city_name):
+        pass
