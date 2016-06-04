@@ -21,6 +21,8 @@ When a city is destroyed, I considered completely removing it from the data stru
 
 * During the move step, I need to keep track if an alien has been moved in this iteration or not in order not to move it twice in the same iteration. I didn't have to implement this either.
 
+* Latest changes that won't work are in the development branch in this repo.
+
 
 # Usage:
 
