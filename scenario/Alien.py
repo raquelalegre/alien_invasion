@@ -8,4 +8,11 @@ class Alien:
         self.moves = 0
 
     def move(self):
-        self.moves += 1
+        '''
+        When alien reaches 10K moves, raise exception so it can be catched from
+        world and iterations stop.
+        '''
+        if self.moves < 10000:
+            self.moves += 1
+        else:
+            raise
