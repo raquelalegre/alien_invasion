@@ -14,11 +14,11 @@ def main():
     or one alien has moved 10K times.
     '''
     # TODO: take path to world map file as input.
-    input_file = 'world_map_small.txt'
+    input_file = 'resources/world_map_small.txt'
     print("Starting world...")
     world = World()
     world.build(input_file)
-    print("The world has {} cities.".format(len(world.keys())))
+    print("The world has {} cities.".format(len(world.cities.keys())))
 
     # TODO: take number of aliens as input
     print("The aliens are coming...")
