@@ -41,6 +41,12 @@ def main():
 
     # TODO: Go over list of cities and move aliens around
     # TODO: Check for destructions and max moves, and update cities and world
+    while world.cities:
+        try:
+            world.step()
+        except:
+            print ("World is over! An alien took 10K moves.")
+    
 
 
 if __name__ == '__main__':
