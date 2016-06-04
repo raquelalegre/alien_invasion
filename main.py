@@ -2,6 +2,9 @@
 This is the entry point of the exercise.
 '''
 
+from scenario.City import City
+from scenario.World import World
+
 
 def main():
     '''
@@ -10,7 +13,21 @@ def main():
     Loop through time steps and update world's status until world is destroyed
     or one alien has moved 10K times.
     '''
-    pass
+    # TODO: take path to world map file as input.
+    input_file = 'world_map_small.txt'
+    print("Starting world...")
+    world = World()
+    world.build(input_file)
+    print("The world has {} cities.".format(len(world.keys())))
+
+    # TODO: take number of aliens as input
+    print("The aliens are coming...")
+    N = 10
+    world.populate(N)
+    print("Aliens are ready in their initial destinations")
+
+    # TODO: Go over list of cities and move aliens around
+    # TODO: Check for destructions and update cities and world
 
 
 if __name__ == '__main__':
