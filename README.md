@@ -45,5 +45,5 @@ python main.py 100 resources/resources/world_map_small.txt
 There was only time for two short tests which can be run with py.test, for example, included in the requirements file. You can install this dependency as well as the rest like this:
 `pip install -r requirements.txt`
 
-The run the tests:
+Then run the tests:
 `py.test -v`
